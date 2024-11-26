@@ -1,38 +1,209 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F8FAF9;
+  margin: 0;
+  padding: 0;
+  max-width: 1600px; /* 페이지 최대 폭 설정 */
+  margin: auto; /* 중앙 정렬 */
+}
+.logo {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  margin-top: 50px; /* 로고를 아래로 이동 */
+}
+/* 책 목록 스타일 */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+.book-item {
+  width: calc(16.66% - 15px); /* 6개를 가로폭에 맞게 조정 (15px 간격 포함) */
+  margin-bottom: 15px; /* 세로 간격 */
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 작가 정보 스타일 */
+.author-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  background-color: #FFFFFF; /* 배경색 */
+  border: 1px solid #ccc; /* 테두리 색상 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  margin: 20px; /* 여백 */
+  margin-bottom: 40px; /* 로고와의 간격을 늘리기 위한 추가 마진 */
+}
+/* 원하는 사진 컨테이너 */
+.desired-photo-container {
+  max-width: 100%; /* 컨테이너 크기를 화면에 맞게 제한 */
+  overflow: hidden; /* 내용이 넘칠 경우 숨기기 */
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+}
+/* 이미지 스타일 */
+.desired-photo {
+  width: 100%;  /* 화면 크기에 맞춰 너비를 100%로 설정 */
+  height: auto; /* 이미지 비율을 유지하면서 높이를 자동으로 설정 */
+  object-fit: contain; /* 이미지가 잘리거나 왜곡되지 않게 조정 */
+}
+.day-tabs {
+  background-color: #526F50 !important; /* 원하는 배경색 설정 */
+}
+.day-tab {
+  background-color: #526F50;  /* 기본 배경 색상 */
+  color: rgb(255, 255, 255);                /* 기본 텍스트 색상 */
+  border: 2px solid #ccc;     /* 기본 테두리 색상 */
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;  /* 마우스 오버 시 부드럽게 색상 변화 */
+}
+/* 마우스를 올렸을 때 색상 변경 */
+.day-tab:hover {
+  background-color: #EAE7DF;  /* 마우스를 올렸을 때 배경 색상 (초록색) */
+  color: #000000;                /* 마우스를 올렸을 때 텍스트 색상 */
+  border-color: #EAE7DF;      /* 마우스를 올렸을 때 테두리 색상 */
+}
+.day-tab.active {
+  background-color: #EAE7DF; /* 클릭된 버튼의 배경색 */
+  color: Black; /* 클릭된 버튼의 텍스트 색 */
+  border-color: #EAE7DF; /* 클릭된 버튼의 테두리 색 */
 }
 
-.App-link {
-  color: #61dafb;
+/* 폼 제목 스타일 */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 파일 업로드 스타일 */
+input[type="file"] {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+
+
+/* 버튼 스타일 */
+.register-button {
+  flex: 1; /* 버튼의 크기를 균등하게 */
+  padding: 8px 12px; /* 버튼 크기 조정 */
+  background-color: #2c8a26;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* 버튼 텍스트 크기 줄임 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.delete-button {
+  flex: 1; /* 버튼의 크기를 균등하게 */
+  padding: 8px 12px; /* 버튼 크기 조정 */
+  background-color: #ab2b2b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* 버튼 텍스트 크기 줄임 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.update-button {
+  flex: 1; /* 버튼의 크기를 균등하게 */
+  padding: 8px 12px; /* 버튼 크기 조정 */
+  background-color: #26268a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* 버튼 텍스트 크기 줄임 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+button.submit {
+  padding: 8px 12px; /* 버튼 크기 조정 */
+  background-color: #526f50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* 버튼 텍스트 크기 줄임 */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #818181;
+}
+
+/* 에러 메시지 스타일 */
+div[style*="color: red"] {
+  color: red;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #444;
+}
+
+/* 라벨 텍스트 스타일 */
+div label {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* .action-buttons{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+  margin-top: 16px;
+} */
+
+.action-buttons {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 16px; 
+  margin-top: 20px;
+}
+
+
+
+/* App.css 수정 */
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form.admin-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

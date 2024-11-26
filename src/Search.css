@@ -1,0 +1,73 @@
+.Search {
+    font-family: 'Arial', sans-serif;
+}
+/* 검색 결과 컨테이너 */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+/* 각 책 항목의 카드 스타일 */
+.search-item {
+    display: flex;
+    align-items: center;
+    width: 1500px; /* 카드 너비를 헤더와 맞춤 */
+    padding: 15px; /* 카드 내부 여백을 줄여서 높이 낮춤 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.search-item:hover {
+    transform: scale(1.03);
+}
+/* 책 이미지 스타일 */
+.search-item img {
+    width: 180px; /* 이미지 너비 조정 */
+    height: 240px; /* 이미지 높이 조정 */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 50px; /* 책 이미지와 책 정보 사이 간격 증가 */
+}
+/* 책 정보 스타일 */
+.book-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.book-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+.book-info p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+/* "더보기" 버튼 스타일 */
+.load-more-button {
+    display: block; /* 블록 형태로 변경 */
+    margin: 20px auto; /* 상하 간격 및 중앙 정렬 */
+    padding: 15px 45px; /* 버튼 크기 조정 */
+    font-size: 18px;
+    color: #fff;
+    background-color: #526F50; /* 초록색 계열 */
+    border: none;
+    border-radius: 8px; /* 둥근 모서리 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+.load-more-button:hover {
+    background-color: #394D3A; /* hover 시 어두운 초록색 */
+}
+.load-more-button:disabled {
+    background-color: #ccc; /* 비활성화 상태 */
+    cursor: not-allowed;
+}

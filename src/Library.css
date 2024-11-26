@@ -1,0 +1,53 @@
+.library-container {
+    padding: 20px;
+}
+
+.library-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 가로폭에 꽉 차게 설정 */
+    padding: 20px;
+}
+
+.book-card {
+    width: calc(16.66% - 10px); /* 6개를 한 줄에 표시하기 위해 100%를 6으로 나눈 값에서 여백을 뺌 */
+    margin-bottom: 20px; /* 세로 간격 */
+    border: 1px solid #ccc; /* 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    padding: 10px; /* 내부 여백 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    display: flex; /* 플렉스 박스 활성화 */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+}
+
+.book-image {
+    width: 100px; /* 이미지 너비 */
+    height: auto; /* 자동 높이 */
+    margin-bottom: 10px; /* 이미지와 텍스트 간격 */
+}
+
+.book-details {
+    flex: 1; /* 남은 공간을 차지 */
+}
+
+.button-library-container {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;
+    margin-bottom: 5px; /* 이미지와 텍스트 간격 */
+}
+
+.action-library-button {
+    width: 100%; /* 버튼이 카드 너비에 맞게 늘어나도록 설정 */
+    padding: 5px 10px; /* 버튼 내 여백을 줄여서 얇게 만듦 */
+    font-size: 12px; /* 폰트 크기 더 작게 설정 */
+    cursor: pointer; /* 마우스 커서 모양 변경 */
+    margin-top: 5px; /* 버튼 간 간격 */
+    transition: background-color 0.3s; /* 배경색 변화 효과 */
+}
